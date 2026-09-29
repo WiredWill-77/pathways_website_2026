@@ -1,0 +1,14 @@
+/* Brand face is PP Neue Montreal (commercial, Pangram Pangram). The licensed binaries were not
+   supplied, so no @font-face is declared for it yet — --font-sans keeps it first and falls back to
+   Instrument Sans (closest free grotesque) until the woff2 files are uploaded to assets/fonts/. */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* Uses a locally-installed copy if the designer has one; no binaries are shipped. */
+@font-face{font-family:"PP Neue Montreal";src:local("PP Neue Montreal Book"),local("PP Neue Montreal");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Neue Montreal";src:local("PP Neue Montreal Medium"),local("PP Neue Montreal");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"PP Neue Montreal";src:local("PP Neue Montreal Bold"),local("PP Neue Montreal");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --font-sans:"PP Neue Montreal","Instrument Sans",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}

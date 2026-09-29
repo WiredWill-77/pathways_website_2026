@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Risk &amp; Reporting Console — shadcn/ui defaults</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* shadcn/ui default theme tokens (neutral base, dark mode) — untouched values */
+:root{--radius:0.625rem;
+--background:oklch(0.145 0 0);--foreground:oklch(0.985 0 0);
+--card:oklch(0.205 0 0);--card-foreground:oklch(0.985 0 0);
+--popover:oklch(0.205 0 0);--primary:oklch(0.922 0 0);--primary-foreground:oklch(0.205 0 0);
+--secondary:oklch(0.269 0 0);--secondary-foreground:oklch(0.985 0 0);
+--muted:oklch(0.269 0 0);--muted-foreground:oklch(0.708 0 0);
+--accent:oklch(0.269 0 0);--border:oklch(1 0 0 / 10%);--input:oklch(1 0 0 / 15%);--ring:oklch(0.556 0 0);
+--chart-1:oklch(0.488 0.243 264.376);--chart-2:oklch(0.696 0.17 162.48);--chart-3:oklch(0.769 0.188 70.08);
+--chart-4:oklch(0.627 0.265 303.9);--chart-5:oklch(0.645 0.246 16.439);
+/* Pathways blues carry both series: deep brand blue for the primary, pale tint for the companion */
+--area-upper:#67D3FF;--area-upper-line:#9BE2FF;
+--area-lower:#1B87C9;--area-lower-line:#4EBAFC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--background);color:var(--foreground);font-family:Geist,ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11"}
+a{color:var(--foreground)}a:hover{color:var(--muted-foreground)}
+.wrap{max-width:1160px;margin:0 auto;padding:32px 24px 64px;display:flex;flex-direction:column;gap:16px}
+/* header */
+.page-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.page-head h1{margin:0;font-size:24px;line-height:1.2;font-weight:600;letter-spacing:-0.025em}
+.page-head p{margin:6px 0 0;font-size:14px;color:var(--muted-foreground)}
+.head-actions{display:flex;align-items:center;gap:8px}
+/* primitives */
+.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:calc(var(--radius) - 4px);padding:3px 8px;font-size:12px;font-weight:500;line-height:1.3;color:var(--foreground);background:transparent;white-space:nowrap}
+.badge.secondary{background:var(--secondary);border-color:transparent}
+.dot{width:6px;height:6px;border-radius:999px;background:var(--chart-2);display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 12px;font:inherit;font-size:13px;font-weight:500;border-radius:calc(var(--radius) - 2px);border:1px solid var(--input);background:transparent;color:var(--foreground);cursor:pointer;transition:background 120ms ease,color 120ms ease}
+.btn:hover{background:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.card{background:var(--card);color:var(--card-foreground);border:1px solid var(--border);border-radius:calc(var(--radius) + 2px);display:flex;flex-direction:column}
+.card-head{padding:20px 20px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.card-title{font-size:14px;font-weight:500;line-height:1.3;margin:0}
+.card-desc{margin:4px 0 0;font-size:12px;color:var(--muted-foreground)}
+.card-body{padding:16px 20px 20px}
+.card-body.tight{padding:12px 20px 16px}
+/* kpi */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi .label{font-size:13px;font-weight:500;color:var(--muted-foreground)}
+.kpi .value{font-size:26px;font-weight:600;letter-spacing:-0.03em;line-height:1.1;margin-top:8px;font-variant-numeric:tabular-nums}
+.kpi .delta{font-size:12px;color:var(--muted-foreground);margin-top:6px;display:flex;align-items:center;gap:5px}
+.kpi .delta b{font-weight:500;color:var(--foreground)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+/* legend + charts */
+.legend{display:inline-flex;gap:12px;font-size:12px;color:var(--muted-foreground)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:8px;height:8px;border-radius:2px;display:block}
+.legend i.dash{width:14px;height:2px;border-radius:2px;opacity:.85}
+.chart-wrap{position:relative}
+.chart{width:100%;display:block;overflow:visible}
+.chart-dot{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:999px;background:var(--area-lower-line);box-shadow:0 0 0 3px color-mix(in oklab,var(--area-lower-line) 22%,transparent)}
+.axis{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--muted-foreground)}
+.axis.ticks{position:relative;display:block;height:17px}
+.axis.ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.axis.ticks span:first-child{transform:none}
+.axis.ticks span:last-child{transform:translateX(-100%)}
+.card-foot{padding:0 20px 20px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.3}
+.card-foot .trend{display:flex;align-items:center;gap:7px;font-weight:500}
+.card-foot .trend svg{width:16px;height:16px}
+.card-foot .range{color:var(--muted-foreground)}
+/* rows / table */
+.rows{display:flex;flex-direction:column}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px}
+.row:last-child{border-bottom:none}
+.row .k{color:var(--foreground)}
+.row .v{font-size:13px;color:var(--muted-foreground);font-variant-numeric:tabular-nums}
+.meter{display:flex;align-items:center;gap:12px;min-width:150px}
+.track{width:96px;height:6px;border-radius:999px;background:var(--muted);overflow:hidden}
+.track i{display:block;height:100%;border-radius:999px;background:var(--area-lower-line)}
+.num{font-size:13px;font-variant-numeric:tabular-nums;width:46px;text-align:right}
+/* gauge */
+.gauge{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0 4px}
+.gauge .readout{position:absolute;left:0;right:0;bottom:12px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.gauge .fig{font-size:30px;font-weight:600;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+.gauge .cap{font-size:13px;color:var(--muted-foreground)}
+.foot-note{font-size:12px;color:var(--muted-foreground);padding-top:2px}
+@media (max-width:640px){.wrap{padding:24px 16px 48px}.page-head h1{font-size:20px}}
+</style></head>
+<body>
+<div class="wrap">
+<div class="page-head">
+  <div><h1>Risk &amp; Reporting Console</h1>
+    <p>Capital, exposure and reporting health across the group. Updated every 60 seconds.</p></div>
+  <div class="head-actions"><span class="badge"><span class="dot"></span>Live</span><button class="btn">Export CSV</button></div>
+</div>
+
+<div class="kpis">
+  <div class="card kpi"><div class="card-body"><div class="label">Capital Ratio</div><div class="value">18.4%</div><div class="delta"><b>+0.6</b> vs last quarter</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Fraud Recovered</div><div class="value">34%</div><div class="delta"><b>+9</b> pts year on year</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Close Cycle</div><div class="value">3.1 d</div><div class="delta"><b>−62%</b> since rollout</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Cost / Income</div><div class="value">41.2%</div><div class="delta"><b>−3.4</b> vs plan</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Net Interest Margin</div><div class="value">5.8%</div><div class="delta"><b>+0.4</b> vs last quarter</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Liquidity Coverage</div><div class="value">132%</div><div class="delta"><b>+11</b> above requirement</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Reg Reports Automated</div><div class="value">27</div><div class="delta">of 31 in scope</div></div></div>
+  <div class="card kpi"><div class="card-body"><div class="label">Model Coverage</div><div class="value">89%</div><div class="delta"><b>+6</b> models validated</div></div></div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div><h2 class="card-title">Exposure Vs Limit</h2><p class="card-desc">Rolling 12 months, group total</p></div>
+    <span class="legend"><span><i style="background:var(--area-lower-line)"></i>Exposure</span><span><i class="dash" style="background:var(--area-upper-line)"></i>Limit</span></span></div>
+  <div class="card-body tight">
+    <div class="chart-wrap"><svg class="chart" height="210" viewBox="0 0 720 210" preserveAspectRatio="none" data-chart="exposure" aria-label="Exposure against limit, rolling 12 months"></svg></div>
+    <div class="axis ticks"><span style="left:0">Oct</span><span style="left:27.3%">Jan</span><span style="left:54.5%">Apr</span><span style="left:81.8%">Jul</span><span style="left:100%">Sep</span></div>
+  </div>
+  <div class="card-foot">
+    <div class="trend">Exposure up 24 points over 12 months <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
+    <div class="range">October 2025 &ndash; September 2026 &middot; 6 points of limit headroom</div>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-head"><div><h2 class="card-title">Straight-Through Rate</h2><p class="card-desc">Payments cleared without manual touch</p></div></div>
+    <div class="card-body">
+      <div class="gauge">
+        <svg width="220" height="122" viewBox="0 0 220 122" aria-label="94 percent of payments automated">
+          <path d="M18 108a92 92 0 0 1 184 0" fill="none" stroke="var(--muted)" stroke-width="16"/>
+          <path d="M18 108a92 92 0 0 1 184 0" fill="none" stroke="var(--area-lower-line)" stroke-width="16" stroke-dasharray="289" stroke-dashoffset="17"/>
+        </svg>
+        <div class="readout"><div class="fig">94%</div><div class="cap">Payments automated</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-head"><div><h2 class="card-title">Alert Queue</h2><p class="card-desc">Open items awaiting review</p></div>
+      <span class="badge secondary">27 open</span></div>
+    <div class="card-body">
+      <div class="rows">
+        <div class="row"><span class="k">AML review</span><span class="badge secondary">12</span></div>
+        <div class="row"><span class="k">Limit breach</span><span class="badge secondary">3</span></div>
+        <div class="row"><span class="k">Data quality</span><span class="badge secondary">7</span></div>
+        <div class="row"><span class="k">Recon variance</span><span class="badge secondary">5</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-head"><div><h2 class="card-title">Provisioning Coverage</h2><p class="card-desc">Actual against plan</p></div>
+      <span class="legend"><span><i style="background:var(--area-lower-line)"></i>Actual</span><span><i class="dash" style="background:var(--area-upper-line)"></i>Plan</span></span></div>
+    <div class="card-body tight">
+      <div class="chart-wrap"><svg class="chart" height="175" viewBox="0 0 720 175" preserveAspectRatio="none" data-chart="provisioning" aria-label="Provisioning coverage, actual against plan"></svg></div>
+      <div class="axis"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1</span></div>
+    </div>
+    <div class="card-foot">
+      <div class="trend">Coverage 4 points ahead of plan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></div>
+      <div class="range">Q1 2025 &ndash; Q1 2026</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-head"><div><h2 class="card-title">Pipelines Under SLA</h2><p class="card-desc">Last 30 days availability</p></div></div>
+    <div class="card-body">
+      <div class="rows">
+        <div class="row"><span class="k">Core banking</span><span class="meter"><span class="track"><i style="width:99.9%"></i></span><span class="num">99.9%</span></span></div>
+        <div class="row"><span class="k">Cards</span><span class="meter"><span class="track"><i style="width:99.4%"></i></span><span class="num">99.4%</span></span></div>
+        <div class="row"><span class="k">Treasury</span><span class="meter"><span class="track"><i style="width:97.8%"></i></span><span class="num">97.8%</span></span></div>
+        <div class="row"><span class="k">Branch feed</span><span class="meter"><span class="track"><i style="width:94.1%"></i></span><span class="num">94.1%</span></span></div>
+      </div>
+      <div class="foot-note">Branch feed is below the 95% target for the third week.</div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+/* Monotone cubic interpolation (Fritsch–Carlson): smooth curves that never overshoot a data
+   point, so the line reads as ordered rather than wobbly. */
+function mono(p){
+  var n=p.length,i,dx=[],dy=[],m=[],t=[];
+  if(n<3)return p.map(function(q,i){return (i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)}).join(" ");
+  for(i=0;i<n-1;i++){dx[i]=p[i+1][0]-p[i][0];dy[i]=p[i+1][1]-p[i][1];m[i]=dy[i]/dx[i]}
+  t[0]=m[0];
+  for(i=1;i<n-1;i++)t[i]=m[i-1]*m[i]<=0?0:(m[i-1]+m[i])/2;
+  t[n-1]=m[n-2];
+  for(i=0;i<n-1;i++){
+    if(m[i]===0){t[i]=0;t[i+1]=0;continue}
+    var a=t[i]/m[i],b=t[i+1]/m[i],s=a*a+b*b;
+    if(s>9){var tau=3/Math.sqrt(s);t[i]=tau*a*m[i];t[i+1]=tau*b*m[i]}
+  }
+  var d="M"+p[0][0].toFixed(1)+" "+p[0][1].toFixed(1);
+  for(i=0;i<n-1;i++){var hx=dx[i]/3;
+    d+=" C"+(p[i][0]+hx).toFixed(1)+" "+(p[i][1]+t[i]*hx).toFixed(1)+", "+
+       (p[i+1][0]-hx).toFixed(1)+" "+(p[i+1][1]-t[i+1]*hx).toFixed(1)+", "+
+       p[i+1][0].toFixed(1)+" "+p[i+1][1].toFixed(1)}
+  return d;
+}
+/* One gradient-filled series (the measure) under one clean reference line (the target), so the two
+   never muddy each other where they cross. */
+function render(svg,a,b){
+  var vb=svg.getAttribute("viewBox").split(" ").map(Number),w=vb[2],h=vb[3],id=svg.dataset.chart,frag="";
+  var all=a.concat(b),mn=Math.min.apply(null,all),mx=Math.max.apply(null,all),d=(mx-mn)||1;
+  var lo=mn-d*0.45,hi=mx+d*0.22,span=hi-lo;
+  var y=function(v){return h-((v-lo)/span)*h};
+  var pts=function(s){return s.map(function(v,i){return [i/(s.length-1)*w,y(v)]})};
+  var pa=pts(a),pb=pts(b),da=mono(pa),db=mono(pb);
+  frag+='<defs><linearGradient id="fill-'+id+'" x1="0" y1="0" x2="0" y2="1">'+
+    '<stop offset="0%" stop-color="var(--area-lower)" stop-opacity="0.62"/>'+
+    '<stop offset="100%" stop-color="var(--area-lower)" stop-opacity="0.02"/></linearGradient></defs>';
+  for(var g=1;g<4;g++){var gy=(h/4*g).toFixed(1);
+    frag+='<line x1="0" x2="'+w+'" y1="'+gy+'" y2="'+gy+'" stroke="var(--border)" stroke-width="1" vector-effect="non-scaling-stroke"/>'}
+  frag+='<path d="'+da+' L '+w+' '+h+' L 0 '+h+' Z" fill="url(#fill-'+id+')"/>';
+  frag+='<path d="'+db+'" fill="none" stroke="var(--area-upper-line)" stroke-width="1.5" stroke-dasharray="6 5" stroke-linecap="round" opacity="0.8" vector-effect="non-scaling-stroke"/>';
+  frag+='<path d="'+da+'" fill="none" stroke="var(--area-lower-line)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>';
+  svg.innerHTML=frag;
+  var end=pa[pa.length-1],dot=document.createElement("span");
+  dot.className="chart-dot";dot.style.left="100%";dot.style.top=(end[1]/h*100).toFixed(2)+"%";
+  svg.parentNode.appendChild(dot);
+}
+render(document.querySelector('[data-chart="exposure"]'),[62,66,61,70,74,71,79,84,80,88,91,86],[80,80,82,82,84,84,86,88,88,90,92,92]);
+render(document.querySelector('[data-chart="provisioning"]'),[74,72,76,79,77,83,86,84,90],[76,76,78,78,80,82,82,84,86]);
+</script>
+</body></html>

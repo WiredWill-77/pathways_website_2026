@@ -1,0 +1,225 @@
+/* Whitepaper document. Two parts:
+   1. The paged shell doc-page.js provided (desk, page cards, print geometry), explicit-pagination letter mode only.
+   2. The document styles from whitepaper-pdf.jsx (WPPDF_STYLE), verbatim values.
+   The prototype page loaded no site CSS, so .body first undoes the app's global element defaults. */
+
+/* ---------------------------------------------------------------- page reset (prototype had no stylesheet) */
+.body {
+  margin: 0;
+  padding: 8px; /* the browser's default body margin in the prototype */
+  background: #fff;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: normal;
+  -webkit-font-smoothing: auto;
+  font-feature-settings: normal;
+}
+.body * {
+  box-sizing: content-box;
+  font-family: inherit;
+  letter-spacing: normal;
+}
+.body h1,
+.body p,
+.body b {
+  color: inherit;
+}
+.body h1 {
+  font-size: 2em;
+  line-height: normal;
+  font-weight: bold;
+}
+.body :where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+.body :where(p, li, blockquote, figcaption) {
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------- doc-page shell */
+.desk {
+  position: relative;
+  display: block;
+  min-width: max-content;
+  min-height: 100vh;
+  background: #f5f5f4;
+  padding: 48px 24px;
+  box-sizing: border-box;
+}
+.sheet {
+  width: 8.5in;
+  margin: 0 auto;
+}
+.page {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.772727;
+  container-type: size;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  break-inside: avoid;
+}
+.page + .page {
+  margin-top: 1rem;
+}
+
+@media print {
+  .body {
+    padding: 0;
+    background: none;
+  }
+  .desk {
+    background: none;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+  }
+  .sheet {
+    width: auto;
+    margin: 0;
+  }
+  .page {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    aspect-ratio: auto !important;
+    width: 8.5in !important;
+    height: 11in !important;
+    overflow: hidden !important;
+  }
+  .page + .page {
+    break-before: page !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* ---------------------------------------------------------------- document (whitepaper-pdf.jsx) */
+.wpPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins, Arial, sans-serif;
+  box-sizing: border-box;
+}
+.wpPage * {
+  font-family: Poppins, Arial, sans-serif;
+}
+
+.cover {
+  background: #1d242b;
+  color: #fff;
+  padding: 64px 56px;
+  justify-content: space-between;
+}
+.cover img {
+  height: 34px;
+}
+.cover .eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffaa4b;
+  margin-bottom: 18px;
+}
+.cover h1 {
+  font-size: 42px;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  font-weight: 600;
+  max-width: 540px;
+}
+.cover p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 480px;
+  line-height: 1.55;
+  margin: 0;
+}
+.cover .meta {
+  display: flex;
+  gap: 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.68);
+}
+.cover .meta b {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.inner {
+  background: #fff;
+  color: #1d242b;
+  padding: 52px 56px;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7e5e4;
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+.head img {
+  height: 22px;
+}
+.head span {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #78828c;
+}
+.h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+.h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #424b54;
+  margin: 0 0 26px;
+  max-width: 640px;
+}
+.check {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: #334;
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.check b {
+  color: #1b87c9;
+  flex: none;
+}
+.contact {
+  margin-top: auto;
+  border-top: 1px solid #e7e5e4;
+  padding-top: 22px;
+  font-size: 13px;
+  color: #5a636c;
+  display: flex;
+  justify-content: space-between;
+}
+.foot {
+  font-size: 11px;
+  color: #9aa1a8;
+  margin-top: auto;
+  padding-top: 16px;
+}

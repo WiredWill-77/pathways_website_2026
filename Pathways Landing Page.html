@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pathways Technologies, Data, Applications And Skills</title>
+<meta name="description" content="Pathways Technologies helps organisations in Africa turn data into decisions: analytics platforms, custom software, data skills training and embedded delivery teams.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Pathways Technologies">
+<meta property="og:title" content="Pathways Technologies, Data, Applications And Skills">
+<meta property="og:description" content="Analytics platforms, custom software, data skills training and embedded delivery teams.">
+<meta property="og:image" content="uploads/Pathways Logo - HD 1 1.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="uploads/Pathways Logo - HD 1 1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/styles.css">
+<link rel="stylesheet" href="site.css?v=19">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="image-slot.js"></script>
+<script src="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/_ds_bundle.js"></script>
+<script>(function(){try{var t=localStorage.getItem("pt-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}})();</script>
+</head>
+<body><a class="pt-skip" href="#main">Skip To Main Content</a><div id="root"></div>
+<script>window.PT_HERO_CENTER=1;window.PT_HERO_PHOTO="https://images.unsplash.com/photo-1669127300649-940337f1487e?w=2000&q=80&auto=format&fit=crop";</script>
+<script type="text/babel" src="theme.jsx?v=20"></script>
+<script type="text/babel" src="site.jsx?v=20"></script>
+<script type="text/babel" src="dashboards.jsx?v=20"></script>
+<script type="text/babel" src="solutions.jsx?v=20"></script>
+<script type="text/babel" src="nav.jsx?v=20"></script>
+<script type="text/babel" src="tweaks-panel.jsx?v=20"></script>
+<script type="text/babel" src="home-hero.jsx?v=20"></script>
+<script type="text/babel" src="blocks.jsx?v=20"></script>
+<script type="text/babel" data-presets="react">
+const { Card, Badge, TwoToneHeading, FeatureCell, Testimonial, FaqItem } = window.SearchableDesignSystem_29e52a;
+
+const QUOTES=[
+  ["CLIENT ONE","Add a two to three line client quote here. Keep it specific about the problem solved and the change it made.","Client Name","Job Title, Organisation"],
+  ["CLIENT TWO","Add a two to three line client quote here. Keep it specific about the problem solved and the change it made.","Client Name","Job Title, Organisation"],
+  ["CLIENT THREE","Add a two to three line client quote here. Keep it specific about the problem solved and the change it made.","Client Name","Job Title, Organisation"]];
+
+const SERVICES=[
+  ["chart-spline","Data Science & AI","Forecasting, decision models and generative AI built on your data, and put into production."],
+  ["layout-grid","Analytics & BI","Warehouses, pipelines and dashboards that answer the questions leadership actually asks."],
+  ["code-xml","Apps & Software Development","Custom web, mobile and internal platforms, delivered by product teams who ship."],
+  ["graduation-cap","Data Skills Training","Instructor-led programmes that take analysts, leaders and graduates from spreadsheet to SQL to model."],
+  ["users","Staff Augmentation","Vetted engineers, analysts and scientists embedded in your team within weeks."],
+  ["compass","Digital Transformation Advisory","Operating models, roadmaps and delivery governance for change that survives the first quarter."]];
+
+const PRODUCTS=[
+  ["Insight Grid","A governed analytics workspace where every team works from the same definitions, sources and refresh schedule.",["Semantic Layer","Row-Level Governance","Embedded Dashboards"]],
+  ["P-Score","Performance scoring and benchmarking that turns portfolio, branch or supplier data into one comparable number.",["Weighted Scorecards","Peer Benchmarking","Trend Alerts"]],
+  ["eVoucher","Issue, redeem and reconcile digital vouchers at national scale, with a full audit trail on every transaction.",["Bulk Issuance","Offline Redemption","Reconciliation Exports"]]];
+
+/* Illustrative outcomes, replace with signed-off client results before publishing. */
+const CASE_PHOTOS=[
+  "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1200&q=75&auto=format&fit=crop",
+  "uploads/lobby-sign-english-2800px.png",
+  "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=1200&q=75&auto=format&fit=crop"];
+const CASES=[
+  {sector:"Banking & Finance",title:"Retail Bank Cuts Month-End Close From 8 Days To 3",
+   problem:"Fourteen reporting spreadsheets, three definitions of “active customer”, no audit trail.",
+   stats:[["Close Cycle","−62%"],["Reports Retired","41"],["Time To Value","9 Weeks"]]},
+  {sector:"Government & Public Sector",title:"National Voucher Programme, Reconciled Every Day",
+   problem:"Paper redemption records across 23 agencies, reconciled by hand each quarter.",
+   stats:[["Redemptions","4.2M"],["Reconciliation","Daily"],["Leakage","−31%"]]},
+  {sector:"Transport & Logistics",title:"Fleet Operator Lifts On-Time Arrival To 88%",
+   problem:"Telemetry sat in three vendor portals with no shared route performance view.",
+   stats:[["On-Time","88%"],["Cost Per Km","−17%"],["Events / Month","12B"]]}];
+
+const TIERS=[
+  ["Essentials","From $2,400 / mo","One product, one team, guided onboarding.",["1 Product Workspace","Up To 25 Seats","Standard Support"]],
+  ["Growth","From $6,900 / mo","A delivery squad plus platform, quarterly roadmap.",["2 Products","Up To 120 Seats","Named Delivery Lead"]],
+  ["Enterprise","Custom","Multi-entity governance, private deployment, training at scale.",["Unlimited Seats","Private Cloud / On-Prem","24×7 Support & SLA"]]];
+
+/* Leadership. Swap portraits and biographies as the team grows. */
+const LEADERS=[
+  ["assets/p-becky-2.png","Becky Abraham","Head of Strategy & Growth","Shapes how engagements are scoped and won, from first discovery workshop to signed delivery plan. Twelve years across data platform programmes and public-sector transformation."],
+  ["assets/p-francisca-2.png","Francisca Omasaja","VP of Solutions Delivery","Owns delivery quality across every client account. Came from financial services, and holds the line on model governance, data definitions and audit readiness."],
+  ["assets/p-loren.png","Loren Anduvare","VP of Technology & Project Manager","Runs the product and platform engineering teams. Sets the architecture standards, release cadence and handover practice that keep systems maintainable after we leave."]];
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "heroTreatment": "product",
+  "proofPosture": "loud",
+  "accentBalance": "blue-led"
+}/*EDITMODE-END*/;
+
+function App(){
+  const {PtButton,SectorPanel,Frame,Section,Icon,TrustBar,PtFooter,ClientWall,HomeHero}=window;
+  const {useTweaks,TweaksPanel,TweakSection,TweakRadio,TweakSelect}=window;
+  const [t,setTweak]=useTweaks(TWEAK_DEFAULTS);
+  React.useEffect(()=>{
+    const d=document.documentElement.dataset;
+    d.proof=t.proofPosture; d.accent=t.accentBalance;
+    return ()=>{delete d.proof;delete d.accent};
+  },[t.proofPosture,t.accentBalance]);
+  React.useEffect(()=>{if(window.lucide)lucide.createIcons();});
+  return <>
+    <TweaksPanel>
+      <TweakSection label="First Impression"/>
+      <TweakSelect label="Hero Treatment" value={t.heroTreatment}
+        options={["cinematic","split","framed","band","product"]}
+        onChange={v=>setTweak("heroTreatment",v)}/>
+      <TweakSection label="Voice"/>
+      <TweakRadio label="Proof Posture" value={t.proofPosture}
+        options={["quiet","balanced","loud"]}
+        onChange={v=>setTweak("proofPosture",v)}/>
+    </TweaksPanel>
+    <div style={{background:"var(--announce-bg)",color:"var(--announce-fg)",minHeight:42,display:"flex",
+      alignItems:"center",justifyContent:"center",gap:16,fontSize:"var(--text-sm)",fontWeight:"var(--weight-medium)",
+      flexWrap:"wrap",padding:"8px 16px",textAlign:"center"}}>
+      <span>New! P-Score Benchmarking Is Now Live For Banking &amp; Finance</span>
+      <a href="#" style={{color:"var(--announce-fg)",textDecoration:"underline",textUnderlineOffset:3,
+        display:"inline-flex",alignItems:"center",gap:6}}>Read The Announcement
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <Header/>
+    <main id="main">
+    <HomeHero style={t.heroTreatment}/>
+    <Frame bg="#FFFFFF" id="home-clientwall"><ClientWall/></Frame>
+
+    <Section index="01" label="Services" right="What We Do">
+      <TwoToneHeading size="clamp(23px,4.6vw,34px)" maxWidth={860} lead="One Partner, End To End."
+        rest="Strategy, platforms, applications and people, so nothing is handed over half-finished between vendors."/>
+      <div className="pt-3col" style={{marginTop:56,border:"1px dashed var(--border-hairline)",display:"grid",
+        gridTemplateColumns:"repeat(3,minmax(0,1fr))"}}>
+        {SERVICES.map(([ic,t,d],i)=><FeatureCell key={t} icon={<Icon name={ic} size={40}/>} title={t}
+          className={ic==="graduation-cap"?"pt-icon-plain":undefined}
+          style={{borderRight:i%3<2?"1px dashed var(--border-hairline)":"none",
+            borderTop:i>2?"1px dashed var(--border-hairline)":"none"}}>{d}</FeatureCell>)}
+      </div>
+    </Section>
+
+    <Section index="02" label="Solutions" right="By Industry And Role" bg="var(--bg-subtle)">
+      <TwoToneHeading size="clamp(23px,4.6vw,34px)" maxWidth={860} lead="Built Around Your Context."
+        rest="The same engineering discipline, shaped by the regulation, data and reporting lines of your sector."/>
+      <SectorPanel/>
+    </Section>
+
+    <Section index="03" label="Products" right="Software We Own">
+      <TwoToneHeading size="clamp(23px,4.6vw,34px)" maxWidth={860} lead="Three Products, One Data Spine."
+        rest="Deploy them on their own or alongside a platform we build with you."/>
+      <div className="pt-3col" style={{marginTop:48,display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:24}}>
+        {PRODUCTS.map(([t,d,items])=><Card key={t} hover padding={30}>
+          <Badge tone="neutral">Product</Badge>
+          <h3 style={{fontSize:22,margin:"20px 0 10px",fontWeight:"var(--weight-medium)"}}>{t}</h3>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",lineHeight:1.65,minHeight:88}}>{d}</p>
+          <ul style={{listStyle:"none",padding:0,margin:"0 0 26px",display:"flex",flexDirection:"column",gap:11}}>
+            {items.map(i=><li key={i} style={{display:"flex",alignItems:"center",gap:11,fontSize:"var(--text-sm)"}}>
+              <span style={{width:5,height:5,borderRadius:99,background:"var(--primary)",flex:"0 0 auto"}}/>{i}</li>)}
+          </ul>
+          <a href="#" style={{display:"inline-flex",alignItems:"center",gap:8,fontSize:14,textDecoration:"none",
+            color:"var(--secondary-text)"}}>Explore {t} <Icon name="arrow-right" size={15}/></a>
+        </Card>)}
+      </div>
+    </Section>
+
+    <Section index="04" label="Results" right="Client Outcomes" bg="var(--bg-subtle)">
+      <TwoToneHeading size="clamp(23px,4.6vw,34px)" maxWidth={860} lead="Measured Outcomes."
+        rest="Three recent engagements, the problem we found, and the numbers that moved."/>
+      <div className="pt-3col" style={{marginTop:48,display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:24}}>
+        {CASES.map((c,ci)=><Card key={c.title} hover padding={28}>
+          <div style={{position:"relative",height:150,margin:"-28px -28px 20px",overflow:"hidden",
+            borderRadius:"var(--radius-md) var(--radius-md) 0 0",background:"var(--bg-muted)"}}>
+            <img src={CASE_PHOTOS[ci]} alt="" style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/></div>
+          <Badge tone="accent" style={{color:"#FFFFFF"}}>{c.sector}</Badge>
+          <h3 style={{fontSize:19,margin:"18px 0 10px",fontWeight:"var(--weight-medium)",lineHeight:1.35}}>{c.title}</h3>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",lineHeight:1.65,minHeight:66}}>{c.problem}</p>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:10,
+            paddingTop:18,borderTop:"1px solid var(--grid-line)"}}>
+            {c.stats.map(([k,v])=><div key={k}>
+              <div style={{fontSize:17,fontWeight:"var(--weight-medium)",color:"var(--primary)"}}>{v}</div>
+              <div style={{fontSize:11.5,color:"var(--text-muted)"}}>{k}</div></div>)}</div>
+          <a href="Case Studies.html" style={{display:"inline-flex",alignItems:"center",gap:8,fontSize:14,marginTop:20,
+            textDecoration:"none",color:"var(--secondary-text)"}}>Read The Case Study <Icon name="arrow-right" size={15}/></a>
+        </Card>)}
+      </div>
+      <div style={{textAlign:"center",marginTop:36}}><PtButton tone="secondary" onClick={()=>{location.href="Case Studies.html"}}>See All Case Studies</PtButton></div>
+    </Section>
+
+    <Section index="05" label="Pricing" right="How We Charge">
+      <TwoToneHeading size="clamp(23px,4.6vw,34px)" maxWidth={860} lead="Three Ways To Start."
+        rest="Fixed price for discovery, monthly for delivery squads, per-seat for products."/>
+      <div className="pt-3col" style={{marginTop:48,display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:24}}>
+        {TIERS.map(([t,p,d,items],i)=><Card key={t} hover padding={30}
+          style={i===1?{borderColor:"var(--primary)"}:null}>
+          {i===1&&<Badge tone="accent">Most Chosen</Badge>}
+          <h3 style={{fontSize:20,margin:i===1?"18px 0 6px":"0 0 6px",fontWeight:"var(--weight-medium)"}}>{t}</h3>
+          <div style={{fontSize:26,fontWeight:600,letterSpacing:"-0.02em",marginBottom:10}}>{p}</div>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",minHeight:52}}>{d}</p>
+          <ul style={{listStyle:"none",padding:0,margin:"0 0 24px",display:"flex",flexDirection:"column",gap:10}}>
+            {items.map(x=><li key={x} style={{display:"flex",alignItems:"center",gap:10,fontSize:"var(--text-sm)"}}>
+              <span style={{color:"var(--secondary-text)",display:"inline-flex"}}><Icon name="check" size={15}/></span>{x}</li>)}</ul>
+          <PtButton tone={i===1?"primary":"secondary"} size="md" onClick={()=>{location.href="Pricing.html"}}
+            style={i===1?null:{background:"var(--secondary-soft)",borderColor:"var(--secondary-border)",borderStyle:"solid",borderWidth:1,color:"#FFFFFF"}}>See Full Pricing</PtButton>
+        </Card>)}
+      </div>
+    </Section>
+
+    <PtCtaBand imageId="cta-home" title="Start With A Two-Week Discovery."
+      actions={<><PtButton tone="primary" size="md" arrow onClick={()=>{location.href="Contact Us.html"}}>Book A Demo</PtButton>
+        <PtButton tone="ghost" onDark size="md" onClick={()=>{location.href="Pricing.html"}}>See Pricing</PtButton></>}>
+      A fixed-scope sprint that maps your data estate, names the three highest-value use cases, and gives you a
+      costed delivery plan you can take to your board.
+    </PtCtaBand>
+
+    <Frame bg="var(--bg-subtle)">
+      <style>{`@keyframes ptQuoteScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.pt-quote-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.pt-quote-track{display:flex;gap:24px;width:max-content;animation:ptQuoteScroll 64s linear infinite}
+.pt-quote-marquee:hover .pt-quote-track{animation-play-state:paused}
+.pt-quote-track>*{width:380px;flex:0 0 380px}
+@media(prefers-reduced-motion:reduce){.pt-quote-track{animation:none}}
+@media(max-width:640px){.pt-quote-track>*{width:300px;flex:0 0 300px}}`}</style>
+      <div style={{padding:"72px 0"}}>
+        <div className="pt-quote-marquee">
+          <div className="pt-quote-track">
+            {[...QUOTES,...QUOTES].map(([logo,quote,name,role],i)=><Card key={logo+i} padding={30}>
+              <div style={{fontSize:15,fontWeight:600,letterSpacing:"0.08em",color:"var(--text-muted)"}}>{logo}</div>
+              <p style={{fontSize:16.5,lineHeight:1.6,margin:"20px 0 24px",color:"var(--text-primary)"}}>&ldquo;{quote}&rdquo;</p>
+              <div style={{paddingTop:18,borderTop:"1px solid var(--grid-line)",fontSize:"var(--text-sm)"}}>
+                <span style={{fontWeight:"var(--weight-medium)"}}>{name}</span>
+                <span style={{color:"var(--text-secondary)"}}>, {role}</span>
+              </div>
+            </Card>)}
+          </div>
+        </div>
+      </div>
+    </Frame>
+
+    <Section index="06" label="Trust" right="Governance And People" bg="var(--bg-subtle)">
+      <TwoToneHeading size="clamp(23px,4.6vw,34px)" maxWidth={860} lead="Auditable By Design."
+        rest="Your cloud, your region, your tenancy, with the certifications, partner tiers and named people behind it."/>
+      <div style={{marginTop:36}}><TrustBar/></div>
+      <div className="pt-3col" style={{marginTop:44,display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:24}}>
+        {LEADERS.map(([src,name,role,note])=><Card key={name} padding={26}>
+          <div style={{width:104,height:104,marginBottom:18,borderRadius:"50%",overflow:"hidden",background:"#EEF2F7"}}>
+            <img src={src} alt={name} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/></div>
+          <div style={{fontSize:19,fontWeight:600,letterSpacing:"-0.01em",lineHeight:1.25}}>{name}</div>
+          <div style={{fontSize:12,fontWeight:600,letterSpacing:"0.09em",textTransform:"uppercase",color:"var(--secondary-text)",marginTop:7}}>{role}</div>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",lineHeight:1.65,marginTop:16,marginBottom:0,paddingTop:16,borderTop:"1px solid var(--grid-line)"}}>{note}</p>
+        </Card>)}
+      </div>
+      <div className="pt-2col" style={{marginTop:32,display:"grid",gridTemplateColumns:"1fr 1fr",gap:24}}>
+        {[["shield-check","Data Residency","Deployed into your tenancy and region. We hand over the infrastructure code at the end of every engagement."],
+          ["file-check","Audit Trail","Every definition, transformation and voucher transaction is versioned and exportable for regulators."]]
+          .map(([ic,t,d])=><Card key={t} padding={26}>
+            <span style={{color:"var(--secondary-text)",display:"inline-flex",marginBottom:14}}><Icon name={ic} size={22}/></span>
+            <div style={{fontSize:18,fontWeight:"var(--weight-medium)",marginBottom:8}}>{t}</div>
+            <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",margin:0}}>{d}</p></Card>)}
+      </div>
+    </Section>
+
+    <div style={{background:"var(--ink-700)",backgroundImage:"url('uploads/Public Data.jpg')",
+      backgroundSize:"cover",backgroundPosition:"center",padding:"84px 24px",display:"flex",flexDirection:"column",alignItems:"center",gap:14,position:"relative"}}>
+      <div style={{position:"absolute",inset:0,background:"rgba(10,14,17,.55)"}}></div>
+      <div style={{position:"relative",display:"flex",flexDirection:"column",alignItems:"center",gap:14}}>
+      <h2 style={{color:"#fff",fontSize:32,textAlign:"center",maxWidth:640,fontWeight:500,margin:0}}>
+        Get Your Free Data Maturity Assessment</h2>
+      <p style={{color:"var(--text-on-dark-muted)",fontSize:14,marginBottom:16,textAlign:"center"}}>
+        Twelve questions, one scored report, and the three things to fix first.</p>
+      <div style={{display:"flex",gap:12,flexWrap:"wrap",justifyContent:"center"}}>
+        <PtButton tone="primary" size="md" arrow onClick={()=>{location.href="Contact Us.html"}}>Start The Assessment</PtButton>
+        <PtButton tone="ghost" onDark size="md">Download A Sample</PtButton></div>
+      </div>
+    </div>
+
+    <Section index="07" label="Ask" right="Frequently Asked">
+      <div style={{maxWidth:760,margin:"0 auto"}}>
+        <TwoToneHeading align="center" size="clamp(23px,4.6vw,32px)" lead="Frequently Asked" rest="Questions."
+          style={{marginBottom:36}}/>
+        {[["How Do Engagements Usually Start?","With a two-week discovery: we map your data estate, interview the teams who will use the output, and return a costed delivery plan. Most clients then start with a single use case."],
+          ["Can You Work Alongside Our In-House Team?","Yes. Staff augmentation places our engineers, analysts and scientists inside your existing squads, working to your standards and ceremonies."],
+          ["Do You Train Our People As Part Of Delivery?","Every platform engagement includes enablement. Data Skills Training also runs standalone, from analyst foundations to leadership literacy."],
+          ["Where Does Our Data Live?","Your cloud, your region, your tenancy by default. We deploy into your environment and hand over the infrastructure code."],
+          ["How Is Pricing Structured?","Fixed price for discovery, monthly for delivery squads, per-seat for products. See the pricing page for current rates."]]
+          .map(([q,a],i)=><FaqItem key={q} className="pt-faq-item" question={q} defaultOpen={i===0}>{a}</FaqItem>)}
+      </div>
+      <style>{`.pt-faq-item button:has(+div){color:#EC8425 !important}.pt-faq-item button:has(+div) svg{stroke:#EC8425}`}</style>
+    </Section>
+    </main>
+    <PtFooter/>
+  </>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script></body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Partnerships | Pathways Technologies</title>
+<meta name="description" content="Pathways Technologies partners with Microsoft, Google Cloud, Automation Anywhere, Infobip and Konza Technopolis to deliver data platforms, automation and customer engagement across Africa.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Pathways Technologies">
+<meta property="og:title" content="Partnerships | Pathways Technologies">
+<meta property="og:description" content="Microsoft, Google Cloud, Automation Anywhere, Infobip and Konza Technopolis, the platforms behind our delivery.">
+<meta property="og:image" content="uploads/Pathways Logo - HD 1 1.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="uploads/Pathways Logo - HD 1 1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/styles.css">
+<link rel="stylesheet" href="site.css?v=19">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="image-slot.js"></script>
+<script src="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/_ds_bundle.js"></script>
+<script>(function(){try{var t=localStorage.getItem("pt-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}})();</script>
+<style>.pt-plate img{max-height:100%}</style>
+</head>
+<body><a class="pt-skip" href="#main">Skip To Main Content</a><div id="root"></div>
+<script>window.PT_HERO_PHOTO="uploads/Partnerships 2-68378d35.jpg";</script>
+<script type="text/babel" src="theme.jsx?v=20"></script>
+<script type="text/babel" src="site.jsx?v=20"></script>
+<script type="text/babel" src="blocks.jsx?v=20"></script>
+<script type="text/babel" src="nav.jsx?v=20"></script>
+<script type="text/babel" data-presets="react">
+const { Card, Badge, TwoToneHeading, FaqItem } = window.SearchableDesignSystem_29e52a;
+
+const PARTNERS=[
+  {name:"Microsoft",logo:"uploads/Microsoft Solution Partner.png",status:"Solutions Partner",
+   summary:"We build and run data estates on Azure, from ingestion to the semantic layer, and ship the Power BI and Microsoft 365 experiences your teams already live in.",
+   caps:["Azure Data Platform","Microsoft Fabric & Synapse","Power BI Enterprise","Azure OpenAI Service","Licensing Through Pathways"],
+   proof:["Certified Azure Engineers","Solutions Partner Designation","Tenant-Level Deployments"]},
+  {name:"Google Cloud",logo:"uploads/google_cloud_logo_icon_170066.webp",status:"Delivery Partner",
+   summary:"BigQuery-first warehouses with Looker for governed reporting and Vertex AI for models that move into production, not proofs of concept.",
+   caps:["BigQuery Warehousing","Looker & Looker Studio","Vertex AI","Dataflow Pipelines","Regional Data Residency"],
+   proof:["Certified Cloud Architects","Migration Playbooks","Cost Optimisation Reviews"]},
+  {name:"Automation Anywhere",logo:"uploads/Automation_Anywhere_Logo.svg.png",status:"Implementation Partner",
+   summary:"Intelligent automation across the back office: reconciliation, claims, onboarding and document-heavy processes wired straight into your data platform.",
+   caps:["RPA Bot Development","Document Automation","Process Discovery","Bot Governance & Audit","Citizen Developer Enablement"],
+   proof:["Accredited Bot Developers","Process Assessment Toolkit","Automation Centre Of Excellence"]},
+  {name:"Infobip",logo:"uploads/infobip-logo.png",status:"Technology Partner",
+   summary:"Customer engagement that closes the loop: WhatsApp, SMS and omnichannel journeys triggered by the same models and scores your analytics produce.",
+   caps:["Omnichannel Messaging","WhatsApp Business API","Journey Orchestration","eVoucher Delivery","Engagement Analytics"],
+   proof:["Integrated With eVoucher","Campaign Attribution","Regional Carrier Reach"]},
+  {name:"Konza Technopolis",logo:"uploads/Konza-Technopolis-logo.png",status:"Innovation Partner",
+   summary:"Our anchor for public-sector innovation and the national skills pipeline, local hosting, joint programmes and graduate talent entering our delivery squads.",
+   caps:["National Data Centre Hosting","Public-Sector Programmes","Smart City Data Projects","Graduate Talent Pipeline","Joint Research & Labs"],
+   proof:["Kenya-Based Hosting","Government Programme Delivery","Training Cohorts On Site"]}];
+
+const STACK=[
+  ["database","Platform","Azure, Microsoft Fabric and BigQuery, the warehouse and lakehouse layer your data lands in."],
+  ["bot","Automation","Automation Anywhere bots take the manual steps out of reconciliation, claims and onboarding."],
+  ["message-square","Engagement","Infobip carries the decision to the customer, on WhatsApp, SMS or in-app."],
+  ["landmark","Local Anchor","Konza Technopolis provides Kenyan hosting, public-sector reach and the talent pipeline."]];
+
+const BENEFITS=[
+  ["file-signature","One Contract","Licences, implementation and support on a single Pathways agreement, no vendor triangle when something breaks."],
+  ["badge-check","Certified People","Every platform above is delivered by engineers we certify and re-certify, not by generalists reading documentation."],
+  ["route","No Lock-In Theatre","We deploy into your tenancy on your chosen cloud and hand over the infrastructure code at the end of each engagement."]];
+
+function Plate({p,h=64}){
+  return <div className="pt-plate" style={{height:h}}><img src={p.logo} alt={p.name+" logo"}/></div>;
+}
+
+function App(){
+  const {PtButton,Frame,Section,Icon,PtFooter,TrustBar,ClientWall}=window;
+  React.useEffect(()=>{if(window.lucide)lucide.createIcons();});
+  return <>
+    <Header/>
+    <main id="main">
+    <Frame bg="transparent" className="pt-hero">
+      <div style={{padding:"92px 0 76px"}}>
+        <div style={{maxWidth:860}}>
+          <span style={{display:"inline-flex",alignItems:"center",height:28,padding:"0 12px",borderRadius:"var(--radius-pill)",
+            border:"1px solid rgba(255,255,255,.35)",color:"#FFFFFF",fontSize:12}}>Technology Partnerships</span>
+          <TwoToneHeading accent size="clamp(34px,3.6vw,50px)" maxWidth={860} style={{marginTop:20,fontWeight:700,color:"#FFFFFF"}}
+            lead="Built On The Platforms" rest="You Already Run."/>
+          <p style={{color:"rgba(255,255,255,.78)",fontSize:17,marginTop:22,maxWidth:620}}>
+            Five partnerships cover the whole path from raw data to a message in a customer's hand, platform,
+            automation, engagement and local anchoring.</p>
+          <div style={{display:"flex",gap:12,marginTop:32,flexWrap:"wrap"}}>
+            <PtButton tone="primary" size="lg" arrow onClick={()=>{location.href="Contact Us.html"}}>Book A Demo</PtButton>
+            <PtButton tone="ghost" onDark size="lg" onClick={()=>{location.href="#partners"}}>Meet The Partners</PtButton></div>
+        </div>
+      </div>
+    </Frame>
+
+    <Section index="01" label="Partners" right="Who We Build With" id="partners">
+      <TwoToneHeading size="clamp(23px,4.6vw,32px)" maxWidth={820} lead="Five Partnerships, One Delivery Team."
+        rest="What each partnership gives you, and what we are certified to do with it."/>
+      <div style={{marginTop:44,display:"grid",gap:24}}>
+        {PARTNERS.map((p,i)=><Card key={p.name} hover padding={0}>
+          <div className="pt-2col" style={{display:"grid",gridTemplateColumns:"290px minmax(0,1fr)",gap:0,alignItems:"stretch"}}>
+            <div style={{padding:"30px",borderRight:"1px solid var(--grid-line)",display:"flex",flexDirection:"column",gap:18}}>
+              <Plate p={p} h={78}/>
+              <div>
+                <Badge tone="accent">{p.status}</Badge>
+                <h2 style={{fontSize:20,margin:"14px 0 0",fontWeight:"var(--weight-medium)"}}>{p.name}</h2></div>
+              <div style={{display:"flex",flexDirection:"column",gap:9,marginTop:"auto"}}>
+                {p.proof.map(x=><span key={x} style={{display:"flex",gap:9,alignItems:"center",fontSize:12.5,
+                  color:"var(--text-secondary)"}}>
+                  <span style={{color:"var(--secondary-text)",display:"inline-flex"}}><Icon name="check" size={14}/></span>{x}</span>)}</div>
+            </div>
+            <div style={{padding:"30px"}}>
+              <div style={{fontSize:"var(--text-eyebrow)",letterSpacing:"var(--tracking-eyebrow)",textTransform:"uppercase",
+                color:"var(--text-muted)",marginBottom:12}}>[0{i+1}] What We Do Together</div>
+              <p style={{fontSize:16,color:"var(--text-secondary)",lineHeight:1.7,marginTop:0,maxWidth:640}}>{p.summary}</p>
+              <div style={{display:"flex",flexWrap:"wrap",gap:8,marginTop:22}}>
+                {p.caps.map(c=><span key={c} style={{display:"inline-flex",alignItems:"center",height:34,padding:"0 14px",
+                  borderRadius:"var(--radius-pill)",border:"1px solid var(--border-hairline)",fontSize:13.5,
+                  color:"var(--text-primary)",background:"var(--stone-50)"}}>{c}</span>)}</div>
+              <a href="Contact Us.html" style={{display:"inline-flex",alignItems:"center",gap:8,fontSize:14,marginTop:24,
+                textDecoration:"none",color:"var(--secondary-text)"}}>
+                Scope A {p.name} Engagement <Icon name="arrow-right" size={15}/></a>
+            </div>
+          </div>
+        </Card>)}
+      </div>
+    </Section>
+
+    <Section index="02" label="Stack" right="How It Fits Together" bg="var(--bg-subtle)">
+      <TwoToneHeading size="clamp(23px,4.6vw,32px)" maxWidth={820} lead="Four Layers, One Data Spine."
+        rest="Most clients start in one layer. The partnerships are what let them add the next without re-platforming."/>
+      <div className="pt-2col" style={{marginTop:44,display:"grid",gridTemplateColumns:"repeat(4,minmax(0,1fr))",
+        border:"1px dashed var(--border-hairline)"}}>
+        {STACK.map(([ic,t,d],i)=><div key={t} style={{padding:"28px 24px",
+          borderRight:i<3?"1px dashed var(--border-hairline)":"none"}}>
+          <span style={{color:"var(--secondary-text)",display:"inline-flex",marginBottom:14}}><Icon name={ic} size={22}/></span>
+          <div style={{fontSize:18,fontWeight:"var(--weight-medium)",marginBottom:8}}>{t}</div>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",margin:0}}>{d}</p></div>)}
+      </div>
+      <div className="pt-3col" style={{marginTop:24,display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:24}}>
+        {BENEFITS.map(([ic,t,d])=><Card key={t} padding={28}>
+          <span style={{color:"var(--secondary-text)",display:"inline-flex",marginBottom:14}}><Icon name={ic} size={22}/></span>
+          <div style={{fontSize:18,fontWeight:"var(--weight-medium)",marginBottom:8}}>{t}</div>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",margin:0}}>{d}</p></Card>)}
+      </div>
+      <div style={{marginTop:40}}><TrustBar/></div>
+    </Section>
+
+    <PtCtaBand imageId="cta-partnerships" title="Already Licensed On One Of These?"
+      actions={<><PtButton tone="primary" size="md" arrow onClick={()=>{location.href="Contact Us.html"}}>Book A Demo</PtButton>
+        <PtButton tone="ghost" onDark size="md" onClick={()=>{location.href="mailto:info@pathwaystechnologies.com"}}>Email The Partner Team</PtButton></>}>
+      Bring your existing Microsoft, Google Cloud, Automation Anywhere or Infobip estate. We start from what you own
+      and fill the gaps, no rip and replace.
+    </PtCtaBand>
+
+    <Section index="03" label="Clients" right="Programme Partners">
+      <TwoToneHeading size="clamp(23px,4.6vw,32px)" maxWidth={820} lead="Delivered With Governments, Insurers And Global NGOs."
+        rest="Programme partners and clients we build alongside, in the public sector, insurance and development."/>
+      <ClientWall label={null}/>
+    </Section>
+
+    <Section index="04" label="Become A Partner" right="Work With Us">
+      <div className="pt-2col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:40,alignItems:"start"}}>
+        <div>
+          <TwoToneHeading size="clamp(23px,4.6vw,30px)" lead="Partner With Pathways."
+            rest="Resell our products, deliver on our platform, or run our training curriculum in your market."/>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",marginTop:20,maxWidth:480}}>
+            We reply to every application within five working days. Registered opportunities are protected for
+            180 days and we do not bid against a partner on a deal they registered first.</p>
+          <div style={{display:"flex",gap:12,marginTop:26,flexWrap:"wrap"}}>
+            <PtButton tone="primary" size="md" arrow onClick={()=>{location.href="Contact Us.html"}}>Apply To Become A Partner</PtButton></div>
+        </div>
+        <div style={{display:"grid",gap:16}}>
+          {[["handshake","Reseller","Sell Insight Grid, P-Score and eVoucher under your own agreement, 20% lifetime revenue share with deal registration."],
+            ["hard-hat","Delivery","Implement on our platform with certified consultants, shared governance and an escalation path to our engineers."],
+            ["graduation-cap","Training","Run our Data Skills curriculum with licensed materials, instructor accreditation and 25% revenue share."]]
+            .map(([ic,t,d])=><Card key={t} padding={24}>
+              <div style={{display:"flex",gap:14,alignItems:"flex-start"}}>
+                <span style={{color:"var(--secondary-text)",display:"inline-flex",marginTop:2}}><Icon name={ic} size={20}/></span>
+                <div><div style={{fontSize:17,fontWeight:"var(--weight-medium)",marginBottom:6}}>{t}</div>
+                  <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",margin:0}}>{d}</p></div></div></Card>)}
+        </div>
+      </div>
+    </Section>
+
+    <Section index="05" label="Ask" right="Partner Questions" bg="var(--bg-subtle)">
+      <div style={{maxWidth:760,margin:"0 auto"}}>
+        {[["Can We Buy Microsoft Or Google Cloud Licences Through You?","Yes. We resell and manage licensing for the platforms we are certified on, so implementation, support and licences sit on one agreement."],
+          ["Do You Only Deploy On Azure And Google Cloud?","Those are the two we are certified to deliver at depth. We will work in another cloud where you are already committed, and say so plainly if it limits us."],
+          ["What Does The Automation Anywhere Partnership Cover?","Process discovery, bot development, document automation and bot governance, usually alongside a data platform so bots and reporting share one source of truth."],
+          ["How Is Infobip Used In Your Products?","eVoucher issues and redeems through Infobip channels, and P-Score alerts can be delivered as WhatsApp or SMS journeys."],
+          ["What Do You Do With Konza Technopolis?","Kenyan hosting for data-residency-bound workloads, joint public-sector programmes, and a graduate pipeline feeding our delivery squads and training cohorts."]]
+          .map(([q,a],i)=><FaqItem key={q} question={q} defaultOpen={i===0}>{a}</FaqItem>)}
+      </div>
+    </Section>
+    </main>
+    <PtFooter/>
+  </>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script></body></html>

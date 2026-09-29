@@ -1,0 +1,141 @@
+/* Design-system tokens, copied verbatim from _ds/searchable-design-system/tokens. Do not edit values here
+   without updating the design source. Fonts come from next/font in app/layout.tsx. */
+
+/* ---- colors.css ---- */
+:root{
+  /* Blue — Pathways primary (#1b87c9) with its three tints */
+  --blue-50:#EFF8FE; --blue-100:#DCEFFB; --blue-200:#67D3FF; --blue-300:#4EBAFC;
+  --blue-400:#34A0E2; --blue-500:#1B87C9; --blue-600:#166FA5; --blue-700:#115682;
+
+  /* Orange — Pathways tertiary (#ec8425) with its three tints */
+  --orange-50:#FFF7EC; --orange-100:#FFEBD2; --orange-200:#FFD071; --orange-300:#FFB758;
+  --orange-400:#FFAA4B; --orange-500:#EC8425; --orange-600:#C66C18; --orange-700:#9E5510;
+
+  /* Ink — near-blacks */
+  --ink-900:#000000; --ink-800:#0E1216; --ink-700:#1D242B; --ink-600:#333C44;
+
+  /* Stone — neutral greys (secondary is pure white) */
+  --stone-0:#FFFFFF; --stone-50:#FAFBFC; --stone-100:#F4F6F8; --stone-200:#EDF0F3;
+  --stone-300:#E1E5EA; --stone-400:#CBD2D9; --stone-500:#98A2AC; --stone-600:#6B757F; --stone-700:#4C555D;
+
+  /* Data viz — chart series */
+  --viz-blue:#1B87C9; --viz-orange:#EC8425; --viz-sky:#67D3FF;
+  --viz-amber:#FFD071; --viz-slate:#98A2AC; --viz-ink:#1D242B;
+
+  /* Semantic */
+  --success:#1F9254; --success-bg:#E8F5ED;
+  --warning:#EC8425; --warning-bg:#FFF3E4;
+  --danger:#C0392B;  --danger-bg:#FBEAE7;
+
+  /* Aliases */
+  --bg-page:var(--stone-0);
+  --bg-subtle:var(--stone-50);
+  --bg-muted:var(--stone-100);
+  --bg-inverse:var(--ink-700);
+  --bg-footer:var(--ink-900);
+  --bg-accent:var(--blue-500);
+  --bg-accent-soft:var(--blue-100);
+  --bg-accent-alt:var(--orange-500);
+
+  --text-primary:#141A20;
+  --text-secondary:var(--stone-600);
+  --text-muted:var(--stone-500);
+  --text-accent:var(--blue-500);
+  --text-accent-alt:var(--orange-500);
+  --text-on-dark:var(--stone-0);
+  --text-on-dark-muted:rgba(255,255,255,.62);
+  --text-on-accent:var(--stone-0);
+  --text-on-accent-muted:rgba(255,255,255,.82);
+
+  --border-hairline:var(--stone-300);
+  --border-strong:var(--stone-400);
+  --border-accent:var(--blue-300);
+  --border-on-dark:rgba(255,255,255,.18);
+  --grid-line:#EDF0F3;
+
+  --link:var(--blue-500);
+  --link-hover:var(--blue-700);
+}
+
+/* ---- typography.css ---- */
+:root{
+  --text-display:clamp(44px,4.4vw,64px);
+  --text-h1:clamp(38px,3.4vw,52px);
+  --text-h2:clamp(30px,2.6vw,40px);
+  --text-h3:28px;
+  --text-h4:22px;
+  --text-h5:18px;
+  --text-body-lg:18px;
+  --text-body:16px;
+  --text-sm:14px;
+  --text-xs:13px;
+  --text-eyebrow:12px;
+
+  --leading-display:1.06;
+  --leading-heading:1.14;
+  --leading-snug:1.35;
+  --leading-body:1.6;
+
+  --tracking-display:-0.02em;
+  --tracking-heading:-0.015em;
+  --tracking-body:0em;
+  --tracking-eyebrow:0.09em;
+
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+}
+
+/* ---- spacing.css ---- */
+:root{
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px;
+  --space-6:24px; --space-8:32px; --space-10:40px; --space-12:48px; --space-16:64px;
+  --space-20:80px; --space-24:96px; --space-32:128px;
+
+  --container-max:1216px;   /* content column, hairline-framed */
+  --gutter:32px;
+  --section-y:96px;         /* vertical rhythm between page sections */
+  --section-y-lg:128px;
+}
+
+/* ---- radius.css ---- */
+:root{
+  --radius-xs:6px;
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:16px;
+  --radius-xl:20px;
+  --radius-pill:999px;
+}
+
+/* ---- elevation.css ---- */
+:root{
+  --shadow-none:none;
+  --shadow-hairline:0 0 0 1px var(--border-hairline);
+  --shadow-card:0 1px 2px rgba(28,25,23,.04);
+  --shadow-raised:0 4px 14px rgba(28,25,23,.06);
+  --shadow-pop:0 12px 32px rgba(28,25,23,.10);
+  --dot-grid:radial-gradient(circle,rgba(28,25,23,.10) 1px,transparent 1px); /* @kind other */
+  --dot-grid-size:14px 14px;
+  --dot-grid-on-accent:radial-gradient(circle,rgba(255,255,255,.22) 1px,transparent 1px); /* @kind other */
+}
+
+/* ---- motion.css ---- */
+:root{
+  --ease-standard:cubic-bezier(.2,.6,.2,1); /* @kind other */
+  --ease-out:cubic-bezier(.16,1,.3,1); /* @kind other */
+  --duration-fast:120ms; /* @kind other */
+  --duration-base:200ms; /* @kind other */
+  --duration-slow:420ms; /* @kind other */
+  --transition-base:all var(--duration-base) var(--ease-standard); /* @kind other */
+}
+
+/* ---- base.css ---- */
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-sans);font-size:var(--text-body);line-height:var(--leading-body);color:var(--text-primary);background:var(--bg-page);-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv01"}
+h1,h2,h3,h4,h5{margin:0;font-weight:var(--weight-medium);letter-spacing:var(--tracking-heading);line-height:var(--leading-heading);color:var(--text-primary)}
+p{margin:0}
+a{color:var(--link);text-decoration:none;transition:color var(--duration-fast) var(--ease-standard)}
+a:hover{color:var(--link-hover)}
+::selection{background:var(--blue-200);color:var(--ink-700)}

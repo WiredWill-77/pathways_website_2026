@@ -1,0 +1,28 @@
+:root{
+  --text-display:clamp(44px,4.4vw,64px);
+  --text-h1:clamp(38px,3.4vw,52px);
+  --text-h2:clamp(30px,2.6vw,40px);
+  --text-h3:28px;
+  --text-h4:22px;
+  --text-h5:18px;
+  --text-body-lg:18px;
+  --text-body:16px;
+  --text-sm:14px;
+  --text-xs:13px;
+  --text-eyebrow:12px;
+
+  --leading-display:1.06;
+  --leading-heading:1.14;
+  --leading-snug:1.35;
+  --leading-body:1.6;
+
+  --tracking-display:-0.02em;
+  --tracking-heading:-0.015em;
+  --tracking-body:0em;
+  --tracking-eyebrow:0.09em;
+
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+}

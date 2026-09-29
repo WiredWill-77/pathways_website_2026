@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us | Pathways Technologies</title>
+<meta name="description" content="Talk to Pathways Technologies about analytics platforms, custom software, data skills training or partnerships. Nairobi, Kenya, info@pathwaystechnologies.com.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Pathways Technologies">
+<meta property="og:title" content="Contact Us | Pathways Technologies">
+<meta property="og:description" content="Book a demo, request a quote, or apply to the partner programme.">
+<meta property="og:image" content="uploads/Pathways Logo - HD 1 1.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="uploads/Pathways Logo - HD 1 1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/styles.css">
+<link rel="stylesheet" href="site.css?v=19">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/_ds_bundle.js"></script>
+<script>(function(){try{var t=localStorage.getItem("pt-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}})();</script>
+</head>
+<body><a class="pt-skip" href="#main">Skip To Main Content</a><div id="root"></div>
+<script>window.PT_HERO_PHOTO="https://images.unsplash.com/photo-1573164574511-73c773193279?w=1600&q=75&auto=format&fit=crop";</script>
+<script type="text/babel" src="theme.jsx?v=20"></script>
+<script type="text/babel" src="site.jsx?v=20"></script>
+<script type="text/babel" src="nav.jsx?v=20"></script>
+<script type="text/babel" data-presets="react">
+const { Card, Badge, TwoToneHeading } = window.SearchableDesignSystem_29e52a;
+
+const INTERESTS=["Analytics & BI Platform","Data Science Engagement","Apps & Software Development",
+  "Data Skills Training","Staff Augmentation","Insight Grid","P-Score","eVoucher","Partner Programme","Something Else"];
+const ROLES=["Business Leader","Data & IT Leader","Analyst","Developer","Marketing","Finance","Sales","Support & Service"];
+
+const field={width:"100%",height:44,padding:"0 14px",borderRadius:"var(--radius-sm)",
+  border:"1px solid var(--border-hairline)",background:"var(--stone-0)",color:"var(--text-primary)",
+  fontSize:15,fontFamily:"var(--font-sans)"};
+
+function Field({label,hint,error,name,children}){
+  return <label style={{display:"block"}} htmlFor={name}>
+    <span style={{display:"block",fontSize:13,color:"var(--text-secondary)",marginBottom:7}}>{label}</span>
+    {children}
+    {error
+      ? <span id={name+"-error"} role="alert" style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:12,color:"var(--danger)",marginTop:6}}>
+          <i data-lucide="alert-circle" style={{width:13,height:13,marginTop:2,flex:"0 0 auto"}}></i>{error}</span>
+      : hint&&<span id={name+"-hint"} style={{display:"block",fontSize:12,color:"var(--text-muted)",marginTop:6}}>{hint}</span>}
+  </label>;
+}
+
+/* Client-side only. Wire handleSubmit to your CRM endpoint (HubSpot / Salesforce) before publishing. */
+function ContactForm(){
+  const {PtButton}=window;
+  const [v,setV]=React.useState({name:"",email:"",company:"",role:"",interest:"",message:""});
+  const [err,setErr]=React.useState({});
+  const [state,setState]=React.useState("idle");
+  const set=(k)=>(e)=>{setV({...v,[k]:e.target.value});if(err[k])setErr({...err,[k]:null});};
+  const a11y=(k,hasHint)=>({id:k,name:k,"aria-invalid":err[k]?"true":undefined,
+    "aria-describedby":err[k]?k+"-error":(hasHint?k+"-hint":undefined)});
+  React.useEffect(()=>{if(window.lucide)lucide.createIcons();},[err,state]);
+  const submit=(e)=>{
+    e.preventDefault();
+    const n={};
+    if(!v.name.trim())n.name="Enter your full name.";
+    if(!/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(v.email))n.email="Enter a valid work email address.";
+    if(!v.company.trim())n.company="Enter your organisation.";
+    if(!v.interest)n.interest="Choose what you would like to talk about.";
+    if(v.message.trim().length<10)n.message="Tell us a little more, at least a sentence.";
+    setErr(n);
+    if(Object.keys(n).length){
+      const first=document.getElementById(Object.keys(n)[0]);
+      if(first)first.focus();
+      return;
+    }
+    setState("sending");
+    setTimeout(()=>setState("sent"),900);
+  };
+  if(state==="sent")return <Card padding={34}>
+    <span style={{color:"var(--secondary-text)",display:"inline-flex",marginBottom:14}}>
+      <i data-lucide="check-circle-2" style={{width:26,height:26}}></i></span>
+    <h2 style={{fontSize:22,margin:"0 0 10px",fontWeight:"var(--weight-medium)"}}>Thanks, Your Message Is In.</h2>
+    <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)"}}>
+      A practice lead will reply within one working day. If it is urgent, call
+      <a href="tel:+254771616839" style={{marginLeft:4}}>+254 771 616 839</a>.</p>
+    <PtButton tone="secondary" size="md" onClick={()=>{setState("idle");setV({name:"",email:"",company:"",role:"",interest:"",message:""})}}>
+      Send Another Message</PtButton></Card>;
+  return <Card padding={34}>
+    <form onSubmit={submit} noValidate style={{display:"grid",gap:18}}>
+      <div className="pt-2col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:18}}>
+        <Field label="Full Name" name="name" error={err.name}>
+          <input {...a11y("name")} style={{...field,borderColor:err.name?"var(--danger)":"var(--border-hairline)"}} value={v.name}
+            onChange={set("name")} autoComplete="name" placeholder="Name"/></Field>
+        <Field label="Work Email" name="email" error={err.email}>
+          <input {...a11y("email")} type="email" style={{...field,borderColor:err.email?"var(--danger)":"var(--border-hairline)"}} value={v.email}
+            onChange={set("email")} autoComplete="email" placeholder="you@organisation.com"/></Field>
+      </div>
+      <div className="pt-2col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:18}}>
+        <Field label="Organisation" name="company" error={err.company}>
+          <input {...a11y("company")} style={{...field,borderColor:err.company?"var(--danger)":"var(--border-hairline)"}} value={v.company}
+            onChange={set("company")} autoComplete="organization" placeholder="Company"/></Field>
+        <Field label="Your Role" name="role" hint="Optional, helps us bring the right person.">
+          <select {...a11y("role",true)} style={field} value={v.role} onChange={set("role")}>
+            <option value="">Select A Role</option>{ROLES.map(r=><option key={r} value={r}>{r}</option>)}</select></Field>
+      </div>
+      <Field label="What Would You Like To Talk About?" name="interest" error={err.interest}>
+        <select {...a11y("interest")} style={{...field,borderColor:err.interest?"var(--danger)":"var(--border-hairline)"}} value={v.interest}
+          onChange={set("interest")}>
+          <option value="">Select A Topic</option>{INTERESTS.map(r=><option key={r} value={r}>{r}</option>)}</select></Field>
+      <Field label="Message" name="message" error={err.message} hint="What is the reporting or data problem you are trying to solve?">
+        <textarea {...a11y("message",true)} rows="5" value={v.message} onChange={set("message")}
+          style={{...field,height:"auto",padding:"12px 14px",lineHeight:1.6,resize:"vertical",
+            borderColor:err.message?"var(--danger)":"var(--border-hairline)"}}
+          placeholder="We close our books in eight days and nobody trusts the numbers…"/></Field>
+      <div style={{display:"flex",alignItems:"center",gap:16,flexWrap:"wrap"}}>
+        <PtButton tone="primary" size="lg" arrow type="submit" aria-busy={state==="sending"}>
+          {state==="sending"?"Sending…":"Send Message"}</PtButton>
+        <span style={{fontSize:"var(--text-xs)",color:"var(--text-muted)",maxWidth:320}}>
+          We reply within one working day. Your details are used only to answer this enquiry.</span></div>
+    </form></Card>;
+}
+
+function App(){
+  const {PtButton,Frame,Section,Icon,PtFooter}=window;
+  React.useEffect(()=>{if(window.lucide)lucide.createIcons();});
+  return <>
+    <Header/>
+    <main id="main">
+    <Frame bg="transparent" className="pt-hero">
+      <div style={{padding:"80px 0 64px",maxWidth:800}}>
+        <span style={{display:"inline-flex",alignItems:"center",height:28,padding:"0 12px",borderRadius:"var(--radius-pill)",
+          border:"1px solid rgba(255,255,255,.35)",color:"#FFFFFF",fontSize:12}}>Contact Us</span>
+        <TwoToneHeading accent size="clamp(34px,3.4vw,46px)" style={{marginTop:20,fontWeight:700,color:"#FFFFFF"}}
+          lead="Tell Us What Is Not Working." rest="We Will Tell You What It Takes To Fix It."/>
+        <p style={{color:"rgba(255,255,255,.78)",fontSize:17,marginTop:22,maxWidth:600}}>
+          Demos, quotes, training cohorts and partner applications all start here. One form, routed to the right
+          practice lead.</p>
+      </div>
+    </Frame>
+
+    <Section index="01" label="Enquiry" right="One Working Day Reply">
+      <div className="pt-2col" style={{display:"grid",gridTemplateColumns:"1.25fr 0.75fr",gap:40,alignItems:"start"}}>
+        <ContactForm/>
+        <div style={{display:"grid",gap:20}}>
+          <Card padding={26}>
+            <div style={{fontSize:17,fontWeight:"var(--weight-medium)",marginBottom:14}}>Nairobi Office</div>
+            {[["map-pin","236 Owashika Road, Nairobi, Kenya"],["mail","info@pathwaystechnologies.com"],
+              ["phone","+254 771 616 839"],["clock","Mon to Fri, 08:30 to 17:30 EAT"]].map(([ic,t])=>
+              <div key={t} style={{display:"flex",gap:11,alignItems:"flex-start",fontSize:"var(--text-sm)",
+                color:"var(--text-secondary)",marginBottom:11}}>
+                <span style={{color:"var(--secondary-text)",display:"inline-flex",marginTop:2}}><Icon name={ic} size={16}/></span>{t}</div>)}
+          </Card>
+          <Card padding={26}>
+            <div style={{fontSize:17,fontWeight:"var(--weight-medium)",marginBottom:12}}>Prefer A Direct Route?</div>
+            {[["Sales & Demos","Book a 30-minute walkthrough of Insight Grid or P-Score.","Book A Demo","#"],
+              ["Partner Programme","Apply to the technology, reseller, delivery or training track.","Partner Details","Partnerships.html"],
+              ["Pricing","Rate card for plans, products and engagement models.","See Pricing","Pricing.html"]]
+              .map(([t,d,cta,href],i)=><div key={t} style={{paddingTop:i?14:0,marginTop:i?14:0,
+                borderTop:i?"1px solid var(--grid-line)":"none"}}>
+                <div style={{fontSize:15,fontWeight:"var(--weight-medium)"}}>{t}</div>
+                <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",margin:"6px 0 8px"}}>{d}</p>
+                <a href={href} style={{display:"inline-flex",alignItems:"center",gap:7,fontSize:14,
+                  textDecoration:"none",color:"var(--secondary-text)"}}>{cta} <Icon name="arrow-right" size={14}/></a></div>)}
+          </Card>
+          <Card padding={26}>
+            <div style={{fontSize:15,fontWeight:"var(--weight-medium)",marginBottom:8}}>Existing Client?</div>
+            <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",marginTop:0}}>
+              Raise a support ticket from inside your workspace for an SLA-tracked response, or email your delivery lead
+              directly.</p>
+            <PtButton tone="secondary" size="md">Open Support</PtButton></Card>
+        </div>
+      </div>
+    </Section>
+    </main>
+    <PtFooter/>
+  </>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script></body></html>

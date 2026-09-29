@@ -1,0 +1,125 @@
+/*
+ * Risk & Reporting Console. shadcn/ui default theme tokens (neutral base, dark mode), untouched
+ * values from the prototype. Imported only by app/risk-console/layout.tsx, and every selector
+ * sits under .rc with rc- prefixed classes, so nothing here reaches the marketing site.
+ */
+.rc {
+  --radius: 0.625rem;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  /* Pathways blues carry both series: deep brand blue for the primary, pale tint for the companion */
+  --area-upper: #67d3ff;
+  --area-upper-line: #9be2ff;
+  --area-lower: #1b87c9;
+  --area-lower-line: #4ebafc;
+
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11";
+}
+/* Neutralise the site reset (tokens.css / site.css) for elements inside the console. */
+.rc h1,
+.rc h2,
+.rc p,
+.rc button,
+.rc a {
+  font-family: inherit;
+  letter-spacing: normal;
+  color: inherit;
+}
+.rc a { color: var(--foreground); }
+.rc a:hover { color: var(--muted-foreground); }
+
+.rc-wrap { max-width: 1160px; margin: 0 auto; padding: 32px 24px 64px; display: flex; flex-direction: column; gap: 16px; }
+
+/* header */
+.rc-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.rc-head h1 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -0.025em; }
+.rc-head p { margin: 6px 0 0; font-size: 14px; color: var(--muted-foreground); }
+.rc-head-actions { display: flex; align-items: center; gap: 8px; }
+
+/* primitives */
+.rc-badge { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); border-radius: calc(var(--radius) - 4px); padding: 3px 8px; font-size: 12px; font-weight: 500; line-height: 1.3; color: var(--foreground); background: transparent; white-space: nowrap; }
+.rc-badge.is-secondary { background: var(--secondary); border-color: transparent; }
+.rc-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--chart-2); display: block; }
+.rc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 32px; padding: 0 12px; font: inherit; font-size: 13px; font-weight: 500; border-radius: calc(var(--radius) - 2px); border: 1px solid var(--input); background: transparent; color: var(--foreground); cursor: pointer; transition: background 120ms ease, color 120ms ease; }
+.rc-btn:hover { background: var(--accent); }
+.rc-btn:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+.rc-card { background: var(--card); color: var(--card-foreground); border: 1px solid var(--border); border-radius: calc(var(--radius) + 2px); display: flex; flex-direction: column; }
+.rc-card-head { padding: 20px 20px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.rc-card-title { font-size: 14px; font-weight: 500; line-height: 1.3; margin: 0; }
+.rc-card-desc { margin: 4px 0 0; font-size: 12px; color: var(--muted-foreground); }
+.rc-card-body { padding: 16px 20px 20px; }
+.rc-card-body.is-tight { padding: 12px 20px 16px; }
+
+/* kpi */
+.rc-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 860px) { .rc-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.rc-kpi-label { font-size: 13px; font-weight: 500; color: var(--muted-foreground); }
+.rc-kpi-value { font-size: 26px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-top: 8px; font-variant-numeric: tabular-nums; }
+.rc-kpi-delta { font-size: 12px; color: var(--muted-foreground); margin-top: 6px; display: flex; align-items: center; gap: 5px; }
+.rc-kpi-delta b { font-weight: 500; color: var(--foreground); }
+.rc-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+
+/* legend + charts */
+.rc-legend { display: inline-flex; gap: 12px; font-size: 12px; color: var(--muted-foreground); }
+.rc-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.rc-legend i { width: 8px; height: 8px; border-radius: 2px; display: block; }
+.rc-legend i.is-dash { width: 14px; height: 2px; border-radius: 2px; opacity: 0.85; }
+.rc-chart-wrap { position: relative; }
+.rc-chart { width: 100%; display: block; overflow: visible; }
+.rc-chart-dot { position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 999px; background: var(--area-lower-line); box-shadow: 0 0 0 3px color-mix(in oklab, var(--area-lower-line) 22%, transparent); }
+.rc-axis { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: var(--muted-foreground); }
+.rc-axis.is-ticks { position: relative; display: block; height: 17px; }
+.rc-axis.is-ticks span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.rc-axis.is-ticks span:first-child { transform: none; }
+.rc-axis.is-ticks span:last-child { transform: translateX(-100%); }
+.rc-card-foot { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.3; }
+.rc-trend { display: flex; align-items: center; gap: 7px; font-weight: 500; }
+.rc-trend svg { width: 16px; height: 16px; }
+.rc-range { color: var(--muted-foreground); }
+
+/* rows / table */
+.rc-rows { display: flex; flex-direction: column; }
+.rc-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.rc-row:last-child { border-bottom: none; }
+.rc-row-k { color: var(--foreground); }
+.rc-meter { display: flex; align-items: center; gap: 12px; min-width: 150px; }
+.rc-track { width: 96px; height: 6px; border-radius: 999px; background: var(--muted); overflow: hidden; }
+.rc-track i { display: block; height: 100%; border-radius: 999px; background: var(--area-lower-line); }
+.rc-num { font-size: 13px; font-variant-numeric: tabular-nums; width: 46px; text-align: right; }
+
+/* gauge */
+.rc-gauge { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 8px 0 4px; }
+.rc-gauge-readout { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+.rc-gauge-fig { font-size: 30px; font-weight: 600; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.rc-gauge-cap { font-size: 13px; color: var(--muted-foreground); }
+.rc-foot-note { font-size: 12px; color: var(--muted-foreground); padding-top: 2px; }
+
+@media (max-width: 640px) {
+  .rc-wrap { padding: 24px 16px 48px; }
+  .rc-head h1 { font-size: 20px; }
+}

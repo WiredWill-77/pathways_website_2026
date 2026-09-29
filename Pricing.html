@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pricing | Pathways Technologies</title>
+<meta name="description" content="Pathways Technologies pricing: fixed-price discovery, monthly delivery squads, per-seat product licensing for Insight Grid, P-Score and eVoucher.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Pathways Technologies">
+<meta property="og:title" content="Pricing | Pathways Technologies">
+<meta property="og:description" content="Fixed-price discovery, monthly delivery squads, per-seat products. Transparent engagement models.">
+<meta property="og:image" content="uploads/Pathways Logo - HD 1 1.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="uploads/Pathways Logo - HD 1 1.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/styles.css">
+<link rel="stylesheet" href="site.css?v=19">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<script src="image-slot.js"></script>
+<script src="_ds/searchable-design-system-29e52a80-d6d1-4967-aa9f-59e9a9708df1/_ds_bundle.js"></script>
+<script>(function(){try{var t=localStorage.getItem("pt-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}})();</script>
+</head>
+<body><a class="pt-skip" href="#main">Skip To Main Content</a><div id="root"></div>
+<script>window.PT_HERO_PHOTO="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1600&q=75&auto=format&fit=crop";</script>
+<script type="text/babel" src="theme.jsx?v=20"></script>
+<script type="text/babel" src="site.jsx?v=20"></script>
+<script type="text/babel" src="blocks.jsx?v=20"></script>
+<script type="text/babel" src="nav.jsx?v=20"></script>
+<script type="text/babel" data-presets="react">
+const { Card, Badge, TwoToneHeading, FaqItem, ComparisonTable } = window.SearchableDesignSystem_29e52a;
+
+/* Illustrative rate card, confirm commercial terms before publishing. */
+const PLANS=[
+  {name:"Essentials",price:"$2,400",per:"per month",blurb:"One product workspace and guided onboarding for a single team.",
+   items:["1 Product Workspace","Up To 25 Seats","Standard Support (Next Business Day)","Quarterly Health Check","Shared Onboarding Programme"]},
+  {name:"Growth",price:"$6,900",per:"per month",blurb:"A delivery squad alongside the platform, with a quarterly roadmap.",featured:true,
+   items:["Up To 2 Products","Up To 120 Seats","Named Delivery Lead","Embedded Squad (3 to 5 People)","Custom Training Tracks","8×5 Support, 4h Response"]},
+  {name:"Enterprise",price:"Custom",per:"annual agreement",blurb:"Multi-entity governance, private deployment and training at scale.",
+   items:["Unlimited Seats","Private Cloud Or On-Premise","Dedicated Delivery Pod","Data Residency Guarantees","24×7 Support With SLA","Executive Reporting Line"]}];
+
+const PRODUCT_RATES=[
+  ["Insight Grid","$38 / seat / month","Governed analytics workspace, semantic layer, embedded dashboards","Volume breaks above 250 seats"],
+  ["P-Score","$1,900 / month","Scorecards, peer benchmarking and trend alerts for one portfolio","Additional portfolios at $600 each"],
+  ["eVoucher","$0.019 / redemption","Issuance, offline redemption and reconciliation exports","Minimum $1,200 per month"]];
+
+const ENGAGEMENTS=[
+  ["compass","Discovery Sprint","$9,500 fixed","Two weeks. Data estate map, three prioritised use cases, costed delivery plan."],
+  ["users","Delivery Squad","From $18,000 / month","Cross-functional pod, engineer, analyst, scientist, delivery lead."],
+  ["user-plus","Staff Augmentation","From $6,200 / month per person","Vetted specialist embedded in your team, minimum three months."],
+  ["graduation-cap","Data Skills Training","$320 per learner per module","Instructor-led cohorts, 6 to 24 learners, delivered on site or remote."]];
+
+function App(){
+  const {PtButton,Frame,Section,Icon,PtFooter,TrustBar}=window;
+  React.useEffect(()=>{if(window.lucide)lucide.createIcons();});
+  return <>
+    <Header/>
+    <main id="main">
+    <Frame bg="transparent" className="pt-hero">
+      <div style={{padding:"80px 0 68px",maxWidth:820}}>
+        <span style={{display:"inline-flex",alignItems:"center",height:28,padding:"0 12px",borderRadius:"var(--radius-pill)",
+          border:"1px solid rgba(255,255,255,.35)",color:"#FFFFFF",fontSize:12}}>Pricing</span>
+        <TwoToneHeading accent size="clamp(34px,3.4vw,46px)" style={{marginTop:20,fontWeight:700,color:"#FFFFFF"}}
+          lead="Priced By How You Buy." rest="Fixed for discovery, monthly for delivery, per-seat for products."/>
+        <p style={{color:"rgba(255,255,255,.78)",fontSize:17,marginTop:22,maxWidth:620}}>
+          Every figure below is a starting rate in USD, excluding taxes. Multi-year and multi-entity agreements are
+          quoted after discovery, nothing is priced before we have seen your data estate.</p>
+        <div style={{display:"flex",gap:12,marginTop:30,flexWrap:"wrap"}}>
+          <PtButton tone="primary" size="lg" arrow onClick={()=>{location.href="Contact Us.html"}}>Book A Demo</PtButton>
+          <PtButton tone="ghost" onDark size="lg" onClick={()=>{location.href="Contact Us.html"}}>Book A Discovery Sprint</PtButton></div>
+      </div>
+    </Frame>
+
+    <Section index="01" label="Plans" right="Platform Subscriptions">
+      <div className="pt-3col" style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:24}}>
+        {PLANS.map(p=><Card key={p.name} hover padding={32} style={p.featured?{borderColor:"var(--primary)"}:null}>
+          {p.featured&&<Badge tone="accent">Most Chosen</Badge>}
+          <h2 style={{fontSize:20,margin:p.featured?"18px 0 8px":"0 0 8px",fontWeight:"var(--weight-medium)"}}>{p.name}</h2>
+          <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:12}}>
+            <span style={{fontSize:34,fontWeight:600,letterSpacing:"-0.03em"}}>{p.price}</span>
+            <span style={{fontSize:"var(--text-sm)",color:"var(--text-muted)"}}>{p.per}</span></div>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",minHeight:62}}>{p.blurb}</p>
+          <ul style={{listStyle:"none",padding:0,margin:"0 0 26px",display:"flex",flexDirection:"column",gap:11}}>
+            {p.items.map(x=><li key={x} style={{display:"flex",gap:10,fontSize:"var(--text-sm)",alignItems:"flex-start"}}>
+              <span style={{color:"var(--secondary-text)",display:"inline-flex",marginTop:2}}><Icon name="check" size={15}/></span>{x}</li>)}</ul>
+          <PtButton tone={p.featured?"primary":"secondary"} size="md" onClick={()=>{location.href="Contact Us.html"}}>
+            {p.name==="Enterprise"?"Request A Quote":"Start With This Plan"}</PtButton>
+        </Card>)}
+      </div>
+      <p style={{fontSize:"var(--text-xs)",color:"var(--text-muted)",marginTop:22}}>
+        All plans include onboarding, documentation handover and access to the resource library. Annual commitments
+        receive two months free.</p>
+    </Section>
+
+    <Section index="02" label="Products" right="Per-Seat And Usage" bg="var(--bg-subtle)">
+      <TwoToneHeading size="clamp(23px,4.6vw,30px)" maxWidth={780} lead="Buy A Product On Its Own."
+        rest="Each product runs standalone in your tenancy, with or without a delivery squad."/>
+      <div style={{marginTop:40,border:"1px solid var(--grid-line)",borderRadius:"var(--radius-md)",overflow:"hidden"}}>
+        {PRODUCT_RATES.map(([n,rate,what,note],i)=><div key={n} className="pt-2col"
+          style={{display:"grid",gridTemplateColumns:"1.1fr 1fr",gap:24,padding:"22px 26px",
+            background:"var(--stone-0)",borderTop:i?"1px solid var(--grid-line)":"none",alignItems:"center"}}>
+          <div><div style={{fontSize:18,fontWeight:"var(--weight-medium)"}}>{n}</div>
+            <div style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",marginTop:6}}>{what}</div></div>
+          <div><div style={{fontSize:20,fontWeight:600,color:"var(--primary)",letterSpacing:"-0.02em"}}>{rate}</div>
+            <div style={{fontSize:"var(--text-xs)",color:"var(--text-muted)",marginTop:4}}>{note}</div></div>
+        </div>)}
+      </div>
+    </Section>
+
+    <Section index="03" label="Services" right="Engagement Models">
+      <TwoToneHeading size="clamp(23px,4.6vw,30px)" maxWidth={780} lead="Services Are Bought By The Sprint Or The Squad."
+        rest="No open-ended time and materials, every engagement has a scope and an exit."/>
+      <div className="pt-2col" style={{marginTop:40,display:"grid",gridTemplateColumns:"1fr 1fr",gap:24}}>
+        {ENGAGEMENTS.map(([ic,t,rate,d])=><Card key={t} padding={28}>
+          <span style={{color:"var(--secondary-text)",display:"inline-flex",marginBottom:14}}><Icon name={ic} size={22}/></span>
+          <div style={{display:"flex",justifyContent:"space-between",gap:16,alignItems:"baseline",flexWrap:"wrap"}}>
+            <div style={{fontSize:18,fontWeight:"var(--weight-medium)"}}>{t}</div>
+            <div style={{fontSize:15,color:"var(--primary)",fontWeight:"var(--weight-medium)"}}>{rate}</div></div>
+          <p style={{fontSize:"var(--text-sm)",color:"var(--text-secondary)",marginTop:10,marginBottom:0}}>{d}</p>
+        </Card>)}
+      </div>
+      <div style={{marginTop:40}}><TrustBar/></div>
+    </Section>
+
+    <PtCtaBand imageId="cta-pricing" title="Not Sure Which Model Fits?"
+      actions={<><PtButton tone="primary" size="md" arrow onClick={()=>{location.href="Contact Us.html"}}>Book A Demo</PtButton>
+        <PtButton tone="ghost" onDark size="md" onClick={()=>{location.href="Partnerships.html"}}>Partner With Us</PtButton></>}>
+      Send us your reporting pain in two sentences. We will tell you whether it is a product, a squad, or a
+      two-week discovery, and what it costs.
+    </PtCtaBand>
+
+    <Section index="04" label="Ask" right="Pricing Questions">
+      <div style={{maxWidth:760,margin:"0 auto"}}>
+        {[["Is The Discovery Sprint Credited Against Delivery?","Yes. The full discovery fee is credited against the first three months of any delivery engagement that follows."],
+          ["Which Currencies Do You Invoice In?","USD, KES, GBP and EUR. Rates are set in USD and converted at the prevailing rate on the invoice date."],
+          ["Are There Setup Fees?","No setup fees on Essentials or Growth. Enterprise private deployments carry a one-off implementation fee quoted after discovery."],
+          ["Can We Move Between Plans?","Upgrade at any time, prorated. Downgrades take effect at the next renewal date."],
+          ["Do You Offer Public-Sector Or NGO Rates?","Yes. Government, education and registered NGO programmes receive a 15% discount on product licensing."]]
+          .map(([q,a],i)=><FaqItem key={q} question={q} defaultOpen={i===0}>{a}</FaqItem>)}
+      </div>
+    </Section>
+    </main>
+    <PtFooter/>
+  </>;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script></body></html>
