@@ -1,0 +1,15 @@
+{
+  "name": "pathways-technologies",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pathways Technologies website. The deployable app is the Next.js project in web/.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "install:web": "npm --prefix web ci",
+    "dev": "npm --prefix web run dev",
+    "build": "npm run install:web && npm --prefix web run build",
+    "start": "npm --prefix web run start"
+  }
+}
