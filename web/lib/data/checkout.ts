@@ -1,11 +1,12 @@
 import { randomBytes } from "node:crypto";
-import { COURSE_CHECKOUT_CONFIG, COURSES } from "@/data/mockData";
+import { COURSE_CHECKOUT_CONFIG } from "@/data/mockData";
 import { validateEnrolment } from "@/components/checkout/validation";
+import { getCourseBySlug } from "./courses";
 import { mockQuery } from "./mock-client";
 import { recordSubmission, TEAM_INBOX } from "./submissions";
 import type { CheckoutConfig, Enrolment, EnrolmentInput, EnrolmentResult } from "@/types/checkout";
 
-/** Price, cohort limits, formats and payment methods for the booking form. */
+/** Price, cohort limits, formats and payment methods for the booking form. These live in code, not the CMS. */
 export async function getCheckoutConfig(): Promise<CheckoutConfig> {
   return mockQuery(() => COURSE_CHECKOUT_CONFIG);
 }
@@ -17,10 +18,9 @@ function bookingReference(): string {
 }
 
 /**
- * Mock enrolment mutation. Validates, prices the booking and returns a reference number.
- * Nothing is stored or logged. Only the whitelisted fields below are read, so anything else a
- * caller passes (card numbers included) is ignored. Replace the body with the CRM or payment
- * provider call when one is chosen.
+ * Validates the booking against the published CMS courses, prices it, stores the enrolment and
+ * queues the team and confirmation emails. Only the whitelisted fields below are read, so anything
+ * else a caller passes (card numbers included) is ignored. No payment is taken here.
  */
 export async function createEnrolment(input: EnrolmentInput): Promise<EnrolmentResult> {
   const cfg = COURSE_CHECKOUT_CONFIG;
@@ -37,7 +37,7 @@ export async function createEnrolment(input: EnrolmentInput): Promise<EnrolmentR
     mpesaPhone: input.paymentMethod === "mpesa" ? String(input.mpesaPhone ?? "") : undefined,
     agreedToTerms: input.agreedToTerms === true,
   };
-  const course = COURSES.find((c) => c.slug === clean.courseSlug && c.status === "published");
+  const course = await getCourseBySlug(clean.courseSlug);
   const errors = validateEnrolment(clean, cfg);
   if (!course) errors.courseSlug = "Choose a module.";
   if (Object.keys(errors).length) return mockQuery(() => ({ ok: false as const, errors, message: "Check the highlighted fields and try again." }));

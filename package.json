@@ -10,6 +10,6 @@
     "install:web": "npm --prefix web ci",
     "dev": "npm --prefix web run dev",
     "build": "npm run install:web && npm --prefix web run build",
-    "start": "npm --prefix web run start"
+    "start": "node server.js"
   }
 }
